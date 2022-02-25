@@ -1,16 +1,18 @@
 # linkml-poetry-gp-template
-A template for LinkML projects using poetry and gen-project
+_A template for LinkML projects using poetry and gen-project_
 
-requires poetry as a system dependency
+This repo requires poetry as a system dependency
 
 https://python-poetry.org/docs/#installation
 
-once the poetry application is installed and the repo is cloned, run this once: `poerty install` to get the python dependencies
+Once the poetry application is installed and the repo is cloned, run this once: `poerty install` to get the python dependencies
 
-put your LinkML YAML file(s) in `model/`, set the `schema` variable in the Makefile to the **name** of your LinkML YAML file (or the top-lvevel file if there are several)
+Put your LinkML YAML file(s) in `model/`
 
-`make all`
+Finally, use the `make project/%.py` rule to generate artifacts based on the LinkML model. Replace the `%` with the basename oif your primary LinkML file, without the `.yaml` extension. In the case of the provided `model/kitchen_sink.yaml`, you would enter
 
-you will get a project directory with derived artifacts
+`make project/kitchen_sink.py`
 
-more on docuemntation later
+you will get a project directory with derived artifacts, including the python classes
+
+more on documentation later

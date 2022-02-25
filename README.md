@@ -9,9 +9,9 @@ Once the poetry application is installed and the repo is cloned, run this once: 
 
 Put your LinkML YAML file(s) in `model/`
 
-Finally, use the `make project/%.py` rule to generate artifacts based on the LinkML model. Replace the `%` with the basename oif your primary LinkML file, without the `.yaml` extension. In the case of the provided `model/kitchen_sink.yaml`, you would enter
+Finally, use the `make %.yaml` rule to generate artifacts based on the LinkML model. Replace the `%` with the basename oif your primary LinkML file, without the `.yaml` extension. In the case of the provided `model/kitchen_sink.yaml`, you would enter
 
-`make project/kitchen_sink.py`
+`make kitchen_sink.yaml`
 
 you will get a project directory with derived artifacts, including the python classes
 

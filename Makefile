@@ -5,5 +5,6 @@ clean:
 	rm -rf project
 	rm -rf tmp
 
-project/%.py: clean
-	poetry run gen-project -d project model/$(subst .py,,$(subst project/,,$@)).yaml
+
+%.yaml: clean
+	poetry run gen-project -d project $@

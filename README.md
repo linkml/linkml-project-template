@@ -1,5 +1,5 @@
 # linkml-poetry-gp-template
-_A template for LinkML projects using poetry and gen-project_
+_A template for LinkML projects using poetry and **g**en-**p**roject_
 
 This repo requires poetry as a system dependency
 

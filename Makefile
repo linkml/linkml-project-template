@@ -7,6 +7,7 @@ SCHEMA_DIR = $(SRC)/linkml
 SCHEMA_ROOT = $(SCHEMA_DIR)/$(SCHEMA_NAME).yaml
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
+DOCDIR = docs
 
 # basename of a YAML file in model/
 .PHONY: all clean
@@ -29,8 +30,13 @@ serve: mkd-serve
 $(PYMODEL):
 	mkdir -p $@
 
-gendoc:
-	$(RUN) gen-doc -d docs $(SCHEMA_ROOT)
+
+$(DOCDIR):
+	mkdir -p $@
+
+gendoc: $(DOCDIR)
+	cp $(SRC)/docs/*md $(DOCDIR) ; \
+	$(RUN) gen-doc -d $(DOCDIR) $(SCHEMA_ROOT)
 
 MKDOCS = $(RUN) mkdocs
 mkd-%:

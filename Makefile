@@ -28,6 +28,9 @@ gen-project: $(PYMODEL)
 test: 
 	$(RUN) gen-project -d tmp $(SCHEMA_ROOT) 
 
+upgrade:
+	poetry add -D linkml@latest
+
 # Test documentation locally
 serve: mkd-serve
 

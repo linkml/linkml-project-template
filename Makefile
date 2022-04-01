@@ -7,4 +7,4 @@ clean:
 
 
 %.yaml: clean
-	poetry run gen-project -d project model/$@
+	poetry run gen-project -d project src/linkml/$@

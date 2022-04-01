@@ -1,9 +1,10 @@
 [tool.poetry]
-name = "linkml-poetry-gp-template"
+name = "linkml-project-template"
 version = "0.1.0"
-description = "A template for LinkML projects using poetry and gen-project"
+description = "Enter description of your project here"
 authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
 license = "MIT"
+include = ["README.md", "src/linkml", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

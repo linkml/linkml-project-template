@@ -12,7 +12,12 @@ DOCDIR = docs
 # basename of a YAML file in model/
 .PHONY: all clean
 
-all: gen-project
+help:
+	@echo "make all -- makes site locally"
+	@echo "make deploy -- deploys site"
+	@echo "make help -- this"
+	@echo ""
+all: gen-project gendoc
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 

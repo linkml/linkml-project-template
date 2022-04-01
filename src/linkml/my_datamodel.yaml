@@ -1,123 +1,104 @@
-id: https://w3id.org/linkml/tests/kitchen_sink
-name: kitchen_sink
+id: https://w3id.org/my_org/my_datamodel
+name: my_datamodel
+title: My Datamodel
 description: |-
-  Kitchen Sink Schema
-
-  This schema does not do anything useful. It exists to test all features of linkml.
-
-  This particular text field exists to demonstrate markdown within a text field:
-
-  Lists:
-
-     * a
-     * b
-     * c
-
-  And links, e.g to [Person](Person.md)
-
+  Enter a detailed description of your project here
 default_curi_maps:
   - semweb_context
 imports:
   - linkml:types
-  - core
 prefixes:
-  pav: http://purl.org/pav/
-  dce: http://purl.org/dc/elements/1.1/
-  lego: http://geneontology.org/lego/
+  my_datamodel: https://w3id.org/my_org/my_datamodel
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
-  ks: https://w3id.org/linkml/tests/kitchen_sink/
-  RO: http://purl.obolibrary.org/obo/RO_
-  BFO: http://purl.obolibrary.org/obo/BFO_
-  CODE: http://example.org/code/
-  ROR: http://example.org/ror/
-  A: http://example.org/activities/
-  P: http://example.org/person/
-default_prefix: ks
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  famrel: http://example.org/famrel/
+default_prefix: my_datamodel
 see_also:
   - https://example.org/
 
-subsets:
-
-  subset A:
-    description: >-
-      test subset A
-    comments:
-      - this subset is meaningless, it is just here for testing
-    aliases:
-      - A
-  subset B:
-    description: >-
-      test subset B
-    aliases:
-      - B
 
 classes:
 
+  Registry:
+    description: Top level data container
+    tree_root: true
+    attributes:
+      persons:
+        range: Person
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+      organizations:
+        range: Organization
+        inlined_as_list: true
+        inlined: true
+        multivalued: true
+    
+
+  NamedThing:
+    description: >-
+      A generic grouping for any identifiable entity
+    slots:
+      - id
+      - name
+      - description
+      - image
+    close_mappings:
+     - schema:Thing
+
+  Person:
+    is_a: NamedThing
+    description: >-
+      A person (alive, dead, undead, or fictional).
+    class_uri: schema:Person
+    mixins:
+      - HasAliases
+    slots:
+      - primary_email
+      - birth_date
+      - age_in_years
+      - current_address
+      - has_familial_relationships
+    slot_usage:
+      primary_email:
+        pattern: "^\\S+@[\\S+\\.]+\\S+"
+  
   HasAliases:
+    description: >-
+      A mixin applied to any class that can have aliases/alternateNames
     mixin: true
     attributes:
       aliases:
         multivalued: true
+        exact_mappings:
+          - schema:alternateName
 
-  Person:
-    in_subset:
-      - subset A
-    mixins:
-      - HasAliases
-    slots:
-      - id
-      - name
-      - has employment history
-      - has familial relationships
-      - has medical history
-      - age in years
-      - addresses
-      - has birth event
-    slot_usage:
-      name:
-        pattern: "^\\S+ \\S+"  ## do not do this in a real schema, people have all kinds of names
 
   Organization:
+    description: >-
+      An organization such as a company or university
+    is_a: NamedThing
+    class_uri: schema:Organization
     mixins:
       - HasAliases
     slots:
-      - id
-      - name
+      - mission_statement
+      - founding_date
 
-  Place:
-    mixins:
-      - HasAliases
-    slots:
-      - id
-      - name
   Address:
+    class_uri: schema:PostalAddress
     slots:
       - street
       - city
+      - postal_code
 
-  Concept:
-    slots:
-      - id
-      - name
-
-  DiagnosisConcept:
-    is_a: Concept
-
-  ProcedureConcept:
-    is_a: Concept
-
-  Event:
-    slots:
-      - started at time
-      - ended at time
-      - is current
 
   Relationship:
     slots:
-      - started at time
-      - ended at time
-      - related to
+      - started_at_time
+      - ended_at_time
+      - related_to
       - type
 
   FamilialRelationship:
@@ -130,121 +111,72 @@ classes:
         range: Person
         required: true
 
-  BirthEvent:
-    is_a: Event
-    slots:
-      - in location
-
-  EmploymentEvent:
-    is_a: Event
-    slots:
-      - employed at
-
-  MedicalEvent:
-    is_a: Event
-    slots:
-      - in location
-      - diagnosis
-      - procedure
-
-  WithLocation:
-    mixin: true
-    slots:
-      - in location
-
-  MarriageEvent:
-    is_a: Event
-    mixins:
-      - WithLocation
-    slots:
-      - married to
-
-  Company:
-    is_a: Organization
-    attributes:
-      ceo:
-        range: Person
-
-  Dataset:
-    attributes:
-      persons:
-        range: Person
-        inlined: true
-        inlined_as_list: true
-        multivalued: true
-      companies:
-        range: Company
-        inlined_as_list: true
-        inlined: true
-        multivalued: true
-      activities:
-        range: activity
-        inlined_as_list: true
-        inlined: true
-        multivalued: true
 
 slots:
-  employed at:
-    range: Company
-    in_subset:
-      - subset A
-  is current:
+  id:
+    identifier: true
+    slot_uri: schema:identifier
+  name:
+    slot_uri: schema:name
+  description:
+    slot_uri: schema:description
+  image:
+    slot_uri: schema:image
+  primary_email:
+    slot_uri: schema:email
+  birth_date:
+    slot_uri: schema:birthDate
+  employed_at:
+    range: Organization
+  is_current:
     range: boolean
-  has employment history:
-    range: EmploymentEvent
-    multivalued: true
-    inlined_as_list: true
-    in_subset:
-      - subset B
-  has marriage history:
-    range: MarriageEvent
-    multivalued: true
-    inlined_as_list: true
-    in_subset:
-      - subset B
-  has medical history:
-    range: MedicalEvent
-    multivalued: true
-    inlined_as_list: true
-    in_subset:
-      - subset B
-  has familial relationships:
+  has_familial_relationships:
     range: FamilialRelationship
     multivalued: true
     inlined_as_list: true
-    in_subset:
-      - subset B
-  married to:
-    range: Person
-  in location:
-    range: Place
-  diagnosis:
-    range: DiagnosisConcept
-    inlined: true
-  procedure:
-    range: ProcedureConcept
-    inlined: true
-  addresses:
+  current_address:
+    description: >-
+      The address at which a person currently lives
     range: Address
-    multivalued: True
-  age in years:
+  age_in_years:
     range: integer
     minimum_value: 0
     maximum_value: 999
-    in_subset:
-      - subset A
-      - subset B
-  related to:
+  related_to:
   type:
   street:
   city:
-  has birth event:
-    range: BirthEvent
+  mission_statement:
+  founding_date:
+  postal_code:
+    range: string
+  started_at_time:
+    slot_uri: prov:startedAtTime
+    range: date
+  ended_at_time:
+    slot_uri: prov:endedAtTime
+    range: date
 
+    
 enums:
+  PersonStatus:
+    permissible_values:
+      ALIVE:
+        description: the person is living
+        meaning: PATO:0001421 
+      DEAD:
+        description: the person is deceased
+        meaning: PATO:0001422
+      UNKNOWN:
+        description: the vital status is not known
+        todos:
+          - map this to an ontology
   FamilialRelationshipType:
     permissible_values:
       SIBLING_OF:
+        meaning: famrel:01
       PARENT_OF:
+        meaning: famrel:02
       CHILD_OF:
-  DiagnosisType:
+        meaning: famrel:01
+

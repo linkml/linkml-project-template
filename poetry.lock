@@ -329,7 +329,7 @@ format_nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-
 
 [[package]]
 name = "linkml"
-version = "1.2.4"
+version = "1.2.6"
 description = "Linked Open Data Modeling Language"
 category = "dev"
 optional = false
@@ -345,7 +345,7 @@ jinja2 = "*"
 jsonasobj2 = ">=1.0.3,<2.0"
 jsonschema = ">=3.0.1"
 linkml-dataops = "*"
-linkml-runtime = ">=1.2.0"
+linkml-runtime = ">=1.2.4,<1.3.0"
 myst-parser = "*"
 openpyxl = "*"
 pandas = "*"
@@ -356,7 +356,7 @@ pyjsg = ">=0.11.6"
 pyshex = ">=0.7.20"
 pyshexc = ">=0.8.3"
 python-dateutil = "*"
-pyyaml = "<5.4"
+pyyaml = "*"
 rdflib = ">=6.0.0"
 requests = ">=2.22"
 sphinx = "*"
@@ -1120,7 +1120,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "3141725f68c6ddc2846bc3034799324c1a3d1d02606bc86e8776c8f9e5774848"
+content-hash = "7f584394ee7adf13fdd9776e9aaab9444226a95a82dc881308b0e7826636078b"
 
 [metadata.files]
 alabaster = [
@@ -1300,8 +1300,8 @@ jsonschema = [
     {file = "jsonschema-4.4.0.tar.gz", hash = "sha256:636694eb41b3535ed608fe04129f26542b59ed99808b4f688aa32dcf55317a83"},
 ]
 linkml = [
-    {file = "linkml-1.2.4-py3-none-any.whl", hash = "sha256:7872494693c0304e0b173faa99ba26346b5001f0f391e7fb8086efc1339c1d6c"},
-    {file = "linkml-1.2.4.tar.gz", hash = "sha256:f4b46be042f967d47eeb747bfa5c864ae8cf2b73bc06954d6f08f3728a97f56d"},
+    {file = "linkml-1.2.6-py3-none-any.whl", hash = "sha256:ea66ce57abee112c0e983db02686e03d41ddde716f9b438d4d5414a39ac77902"},
+    {file = "linkml-1.2.6.tar.gz", hash = "sha256:2d3c9bcaaa3184e9479a0f0ccae19c8438f96cf3f73d386469e0aad4f94c4e03"},
 ]
 linkml-dataops = [
     {file = "linkml_dataops-0.1.0-py3-none-any.whl", hash = "sha256:193cf7f659e5f07946d2c2761896910d5f7151d91282543b1363801f68307f4c"},

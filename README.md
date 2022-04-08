@@ -2,20 +2,32 @@
 
 _A template for LinkML projects_
 
-This repo requires poetry as a system dependency
+NOTE: You don't need to directly use this repository directly!
 
-https://python-poetry.org/docs/#installation
+Instead:
 
-Once the poetry application is installed and the repo is cloned, run this once: `poetry install` to get the python dependencies
+ * [install poetry](https://python-poetry.org/docs/)
+ * [install linkml](https://linkml.io/linkml/intro/install.html)
+ * run `linkml-ws new`
 
-Rename [src/linkml/my-project.yaml](src/linkml/my-project.yaml) to your own project name
+## Example:
 
-Then type:
 
-```bash
-make all
+```
+mkdir ~/my-projects
+cd ~/my-projects
+pip install linkml
+linkml-ws new my-project-name
+cd my-project-name
+# edit src/linkml/my-project-name
+make setup
 ```
 
-you will get a project directory with derived artifacts, including the python classes
+Type `make` to see a full list of options.
+
+## Alternative protocol
+
+You can also simply clone this repo and use it as a template, modifying files as you need - however,
+this is no longer the recommended path
 
 

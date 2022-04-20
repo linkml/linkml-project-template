@@ -8,8 +8,8 @@ SHELL := bash
 
 RUN = poetry run
 # get values from about.yaml file
-SCHEMA_NAME = $(shell sh ./utils/get-value.sh name)
-SOURCE_SCHEMA_PATH = $(shell sh ./utils/get-value.sh source_schema_path)
+SCHEMA_NAME = $(shell bash ./utils/get-value.sh name)
+SOURCE_SCHEMA_PATH = $(shell bash ./utils/get-value.sh source_schema_path)
 SRC = src
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel

@@ -73,6 +73,26 @@ url = "https://pypi.org/simple"
 reference = "pypi-public"
 
 [[package]]
+name = "beautifulsoup4"
+version = "4.11.1"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi-public"
+
+[[package]]
 name = "certifi"
 version = "2021.10.8"
 description = "Python package for providing Mozilla's CA Bundle."
@@ -205,6 +225,19 @@ url = "https://pypi.org/simple"
 reference = "pypi-public"
 
 [[package]]
+name = "editorconfig"
+version = "0.12.3"
+description = "EditorConfig File Locator and Interpreter for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi-public"
+
+[[package]]
 name = "et-xmlfile"
 version = "1.1.0"
 description = "An implementation of lxml.xmlfile for the standard library"
@@ -221,7 +254,7 @@ reference = "pypi-public"
 name = "ghp-import"
 version = "2.0.2"
 description = "Copy your docs directly to the gh-pages branch."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -313,7 +346,7 @@ reference = "pypi-public"
 name = "importlib-metadata"
 version = "4.11.3"
 description = "Read metadata from Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -347,26 +380,10 @@ url = "https://pypi.org/simple"
 reference = "pypi-public"
 
 [[package]]
-name = "itk-core"
-version = "5.2.1.post1"
-description = "ITK is an open-source toolkit for multidimensional image analysis"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-numpy = "*"
-
-[package.source]
-type = "legacy"
-url = "https://pypi.org/simple"
-reference = "pypi-public"
-
-[[package]]
 name = "jinja2"
 version = "3.1.2"
 description = "A very fast and expressive template engine."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -375,6 +392,23 @@ MarkupSafe = ">=2.0"
 
 [package.extras]
 i18n = ["Babel (>=2.7)"]
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi-public"
+
+[[package]]
+name = "jsbeautifier"
+version = "1.14.3"
+description = "JavaScript unobfuscator and beautifier."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+editorconfig = ">=0.12.2"
+six = ">=1.13.0"
 
 [package.source]
 type = "legacy"
@@ -591,7 +625,7 @@ reference = "pypi-public"
 name = "markdown"
 version = "3.3.6"
 description = "Python implementation of Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -636,7 +670,7 @@ reference = "pypi-public"
 name = "markupsafe"
 version = "2.1.1"
 description = "Safely add untrusted strings to HTML/XML markup."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -683,7 +717,7 @@ reference = "pypi-public"
 name = "mergedeep"
 version = "1.3.4"
 description = "A deep merge function for 🐍."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -696,7 +730,7 @@ reference = "pypi-public"
 name = "mkdocs"
 version = "1.3.0"
 description = "Project documentation with Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -724,7 +758,7 @@ reference = "pypi-public"
 name = "mkdocs-material"
 version = "8.2.11"
 description = "Documentation that simply works"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -745,9 +779,31 @@ reference = "pypi-public"
 name = "mkdocs-material-extensions"
 version = "1.0.3"
 description = "Extension pack for Python Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi-public"
+
+[[package]]
+name = "mkdocs-mermaid2-plugin"
+version = "0.6.0"
+description = "A MkDocs plugin for including mermaid graphs in markdown sources"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+beautifulsoup4 = ">=4.6.3"
+jsbeautifier = "*"
+mkdocs = ">=1.0.4"
+mkdocs-material = "*"
+pymdown-extensions = ">=8.0"
+pyyaml = "*"
+requests = "*"
 
 [package.source]
 type = "legacy"
@@ -786,7 +842,7 @@ reference = "pypi-public"
 name = "numpy"
 version = "1.22.3"
 description = "NumPy is the fundamental package for array computing with Python."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 
@@ -815,7 +871,7 @@ reference = "pypi-public"
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -923,7 +979,7 @@ reference = "pypi-public"
 name = "pygments"
 version = "2.11.2"
 description = "Pygments is a syntax highlighting package written in Python."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -953,7 +1009,7 @@ reference = "pypi-public"
 name = "pymdown-extensions"
 version = "9.3"
 description = "Extension pack for Python Markdown."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -1043,7 +1099,7 @@ reference = "pypi-public"
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
 
@@ -1085,7 +1141,7 @@ reference = "pypi-public"
 name = "pyyaml-env-tag"
 version = "0.1"
 description = "A custom YAML tag for referencing environment variables in YAML files."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1244,6 +1300,19 @@ description = "This package provides 29 stemmers for 28 languages generated from
 category = "dev"
 optional = false
 python-versions = "*"
+
+[package.source]
+type = "legacy"
+url = "https://pypi.org/simple"
+reference = "pypi-public"
+
+[[package]]
+name = "soupsieve"
+version = "2.3.2.post1"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [package.source]
 type = "legacy"
@@ -1538,7 +1607,7 @@ reference = "pypi-public"
 name = "watchdog"
 version = "2.1.7"
 description = "Filesystem events monitoring"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -1567,7 +1636,7 @@ reference = "pypi-public"
 name = "zipp"
 version = "3.8.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -1583,7 +1652,7 @@ reference = "pypi-public"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "693333efd85f39a6203bcbb25457b5fe9ca20e30e76aef7b2ed425d40c20abd7"
+content-hash = "b35eb1f90312b73bf3ca19de8557a313ec6cbff624fd7d484a01bace6cccdd2b"
 
 [metadata.files]
 alabaster = [
@@ -1604,6 +1673,10 @@ attrs = [
 babel = [
     {file = "Babel-2.10.1-py3-none-any.whl", hash = "sha256:3f349e85ad3154559ac4930c3918247d319f21910d5ce4b25d439ed8693b98d2"},
     {file = "Babel-2.10.1.tar.gz", hash = "sha256:98aeaca086133efb3e1e2aad0396987490c8425929ddbcfe0550184fdc54cd13"},
+]
+beautifulsoup4 = [
+    {file = "beautifulsoup4-4.11.1-py3-none-any.whl", hash = "sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30"},
+    {file = "beautifulsoup4-4.11.1.tar.gz", hash = "sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"},
 ]
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"},
@@ -1639,6 +1712,10 @@ deprecated = [
 docutils = [
     {file = "docutils-0.17.1-py2.py3-none-any.whl", hash = "sha256:cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"},
     {file = "docutils-0.17.1.tar.gz", hash = "sha256:686577d2e4c32380bb50cbb22f575ed742d58168cee37e99117a854bcd88f125"},
+]
+editorconfig = [
+    {file = "EditorConfig-0.12.3-py3-none-any.whl", hash = "sha256:6b0851425aa875b08b16789ee0eeadbd4ab59666e9ebe728e526314c4a2e52c1"},
+    {file = "EditorConfig-0.12.3.tar.gz", hash = "sha256:57f8ce78afcba15c8b18d46b5170848c88d56fd38f05c2ec60dbbfcb8996e89e"},
 ]
 et-xmlfile = [
     {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
@@ -1729,28 +1806,12 @@ isodate = [
     {file = "isodate-0.6.1-py2.py3-none-any.whl", hash = "sha256:0751eece944162659049d35f4f549ed815792b38793f07cf73381c1c87cbed96"},
     {file = "isodate-0.6.1.tar.gz", hash = "sha256:48c5881de7e8b0a0d648cb024c8062dc84e7b840ed81e864c7614fd3c127bde9"},
 ]
-itk-core = [
-    {file = "itk_core-5.2.1.post1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:54e6838f7dadc0406127c3a6921ccd3acbb8eb5f693365f56d73e526b6bac151"},
-    {file = "itk_core-5.2.1.post1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:baf19079d9fec0f2aa0fff30ac0eb0300605f5439b94ce00bb86742d725a8ce2"},
-    {file = "itk_core-5.2.1.post1-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:04a98890d68ba7a0576299d624845a634b0c64fe97a7689376ddc1962a2e5a26"},
-    {file = "itk_core-5.2.1.post1-cp36-cp36m-win_amd64.whl", hash = "sha256:979d096af5b7a8d2feb0e5796faa4acc597b6b82379ff1a71c415f2ac11f558a"},
-    {file = "itk_core-5.2.1.post1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:8d2551f101cb3321fac11f852816c9c687c8a1c662e79ef5f9abff636c04aeee"},
-    {file = "itk_core-5.2.1.post1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:5743d531122e2cf078e14feebe38ae77fda77910f976486fee5e81cf4b56888b"},
-    {file = "itk_core-5.2.1.post1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:01d1e68217a197ae12496d398e31c81ee6f1ac4cad9b1f710f72c7f57f04edad"},
-    {file = "itk_core-5.2.1.post1-cp37-cp37m-win_amd64.whl", hash = "sha256:b2df954c08c5f25a285da9c7760507673881482c402e1b27d40252e9a8610451"},
-    {file = "itk_core-5.2.1.post1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:bd6abc9de141a7daf2e09fbe45ed684a599dd7607f9629a7bebb9f6484fad817"},
-    {file = "itk_core-5.2.1.post1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:6bb2138f1aa3c8c82ed4eacb08e5956b2d0ef9ba4356a45e7185f0614f770296"},
-    {file = "itk_core-5.2.1.post1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:012f4d64a369a0714f4b32b6a60b5af9d7a315ab565a9c689fa4945e1d446557"},
-    {file = "itk_core-5.2.1.post1-cp38-cp38-win_amd64.whl", hash = "sha256:68830201317f1c0953f927b661c49ae9e17096dd4754c9eaa90cca4d57c77ca2"},
-    {file = "itk_core-5.2.1.post1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:47a4b8a3b12f10d2b5d58335ad1462ebbb5555b26ae861eb604345ef62901b12"},
-    {file = "itk_core-5.2.1.post1-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:d7569c96d0a1f76145c7f9f1a629d566bfd6efb562d295fa4ed3176cf630dd6d"},
-    {file = "itk_core-5.2.1.post1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:37ed7d1deb93c23eb651361bb1bf50a31dade1ace6128c90de6d7b4b98de649b"},
-    {file = "itk_core-5.2.1.post1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:94a1b732b929cb56719d8a160a5f712c1433754ef62d39f646ebf4ce17114168"},
-    {file = "itk_core-5.2.1.post1-cp39-cp39-win_amd64.whl", hash = "sha256:f7e3b45a62d4600d2117060a327b884273825b4c494b3a1b9f209b2591b69aaa"},
-]
 jinja2 = [
     {file = "Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
     {file = "Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
+]
+jsbeautifier = [
+    {file = "jsbeautifier-1.14.3.tar.gz", hash = "sha256:d6d57627cf9ecd8cd901b9ec7ad4a88127a8dede910177fa4b219e76d02f9bd7"},
 ]
 json-flattener = [
     {file = "json_flattener-0.1.9-py3-none-any.whl", hash = "sha256:6b027746f08bf37a75270f30c6690c7149d5f704d8af1740c346a3a1236bc941"},
@@ -1866,6 +1927,10 @@ mkdocs-material = [
 mkdocs-material-extensions = [
     {file = "mkdocs-material-extensions-1.0.3.tar.gz", hash = "sha256:bfd24dfdef7b41c312ede42648f9eb83476ea168ec163b613f9abd12bbfddba2"},
     {file = "mkdocs_material_extensions-1.0.3-py3-none-any.whl", hash = "sha256:a82b70e533ce060b2a5d9eb2bc2e1be201cf61f901f93704b4acf6e3d5983a44"},
+]
+mkdocs-mermaid2-plugin = [
+    {file = "mkdocs-mermaid2-plugin-0.6.0.tar.gz", hash = "sha256:99cca6db7c6b4a954a701dcb6b507191bc32a7b0b47eacf2885c1bacf77d1af1"},
+    {file = "mkdocs_mermaid2_plugin-0.6.0-py3-none-any.whl", hash = "sha256:ffbe8a7daa7ed718cb800c44c5ce4c0ff413caebf7b8b63d9c4a998dfd78a64d"},
 ]
 myst-parser = [
     {file = "myst-parser-0.17.2.tar.gz", hash = "sha256:4c076d649e066f9f5c7c661bae2658be1ca06e76b002bb97f02a09398707686c"},
@@ -2124,6 +2189,10 @@ six = [
 snowballstemmer = [
     {file = "snowballstemmer-2.2.0-py2.py3-none-any.whl", hash = "sha256:c8e1716e83cc398ae16824e5572ae04e0d9fc2c6b985fb0f900f5f0c96ecba1a"},
     {file = "snowballstemmer-2.2.0.tar.gz", hash = "sha256:09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"},
+]
+soupsieve = [
+    {file = "soupsieve-2.3.2.post1-py3-none-any.whl", hash = "sha256:3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759"},
+    {file = "soupsieve-2.3.2.post1.tar.gz", hash = "sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"},
 ]
 sparqlslurper = [
     {file = "sparqlslurper-0.5.1-py3-none-any.whl", hash = "sha256:ae49b2d8ce3dd38df7a40465b228ad5d33fb7e11b3f248d195f9cadfc9cfff87"},

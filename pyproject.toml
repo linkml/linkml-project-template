@@ -6,11 +6,6 @@ authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
 license = "MIT"
 include = ["README.md", "src/linkml", "project"]
 
-[[tool.poetry.source]]
-name = "pypi-public"
-url = "https://pypi.org/simple/"
-default = true
-
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.1.24"

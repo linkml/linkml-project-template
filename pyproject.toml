@@ -9,6 +9,7 @@ include = ["README.md", "src/linkml", "project"]
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.1.24"
+mermaid = "^0.3.2"
 
 [tool.poetry.dev-dependencies]
 linkml = "^1.2.6"

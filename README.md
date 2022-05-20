@@ -31,6 +31,10 @@ cd my-project-name
 make setup
 ```
 
+This will give you a fully functional LinkML repository with artifact generation via github actions based on the 
+example "Person" schema that comes with this template.  The next steps are to replace 
+
+
 ## Getting it into GitHub
 
 - Create a new repo but don't allow GH to initialize any files for you: no README, no .gitignore, no license, etc. Just give it a `Repository name` and click `Create repository`

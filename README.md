@@ -68,6 +68,22 @@ imports:
 and setting your schema file to `myschema.yaml` in the `about.yaml`, linkml-ws will find and properly iterate through
 all three domains of your model generating the artifacts as you have indicated in your `gen-project` makefile target.
 
+## How to author a schema
+
+There are several ways to author a LinkML model.  
+
+* If you have an existing JSONSchema or OWL representation of your data, try using schema-automator.  This
+  LinkML tool allows automatic conversion between JSONSchema, RDF, OWL and 
+  LinkML YAML: https://linkml.io/schema-automator/intro/cli.html
+* If you are more comfortable declaring schemas in google sheets or excel, check out schemasheets (also a LinkML
+  tool): https://linkml.io/schemasheets/
+* hand author your model in YAML by editing the files generated in src/linkml/
+  * We recommend pycharm as a convenient multipurpose editor of YAML.  pycharm allows you to include the 
+    LinkML meta model as a schema source, thus providing validation of model generation on the fly via syntax 
+    highlighting just like it notifies you of python syntax or style errors.  
+    For more information on configuring a JSONSchema for reference in pycharm, see: 
+    https://www.jetbrains.com/help/pycharm/json.html#ws_json_schema_add_custom
+
 
 ## Getting it into GitHub
 

@@ -6,10 +6,14 @@ NOTE: You don't need to directly use this repository directly!
 
 ## Prerequisites
 
-This repository is designed to be used via the `linkms-ws` script in the 
+This repository is designed to be used via the `linkml-ws` script in the 
 [`linkml` package](https://github.com/linkml/linkml). We encourage running 
 that script via `pipx`. If you haven't already, follow 
 [these instructions](https://pypa.github.io/pipx/#install-pipx) to install `pipx`. 
+
+The project that `linkml-ws` generates uses [Poetry](https://python-poetry.org/) 
+for dependency management. So be sure to have that 
+[installed](https://python-poetry.org/docs/#installation), too.
 
 ## Example
 

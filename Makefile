@@ -64,7 +64,7 @@ examples/%.json: src/data/examples/%.yaml
 examples/%.ttl: src/data/examples/%.yaml
 	$(RUN) linkml-convert -P EXAMPLE=http://example.org/ -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
 
-upgrade:
+update:
 	poetry add -D linkml@latest
 
 # Test documentation locally

@@ -2,6 +2,7 @@
 name = "linkml-project-template"
 version = "0.1.0"
 description = "Enter description of your project here"
+readme = "README.md"
 authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
 license = "MIT"
 include = ["README.md", "src/linkml", "project"]

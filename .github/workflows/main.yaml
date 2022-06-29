@@ -62,7 +62,6 @@ jobs:
       #----------------------------------------------
       #              run test suite   
       #----------------------------------------------
-      # enable this step when you have tests for your data model
-      # - name: Run tests
-      #   run: make test
+      - name: Run tests
+        run: make test
 

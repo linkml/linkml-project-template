@@ -9,7 +9,8 @@ include = ["README.md", "src/*"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml = "^1.2.6"
+
+linkml = "^1.2.15"
 mkdocs-mermaid2-plugin = "^0.6.0"
 
 [tool.poetry.dev-dependencies]

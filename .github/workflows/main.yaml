@@ -2,7 +2,7 @@
 # https://docs.github.com/en/actions/guides/building-and-testing-python
 # https://github.com/snok/install-poetry#workflows-and-tips
 
-name: Build and test linkml-runtime
+name: Build and Test LinkML model
 
 on: [pull_request]
 
@@ -62,6 +62,7 @@ jobs:
       #----------------------------------------------
       #              run test suite   
       #----------------------------------------------
-      - name: Run tests
-        run: make test
+      # enable this step when you have tests for your data model
+      # - name: Run tests
+      #   run: make test
 

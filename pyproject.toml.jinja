@@ -5,15 +5,15 @@ description = "{{description}}"
 readme = "README.md"
 authors = ["{{author}}"]
 license = "MIT"
-include = ["README.md", "src/linkml", "project"]
+include = ["README.md", "src/*"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.2.15"
+
+linkml = "^1.2.15"
 mkdocs-mermaid2-plugin = "^0.6.0"
 
 [tool.poetry.dev-dependencies]
-linkml = "^1.2.6"
 mkdocs-material = "^8.2.8"
 
 [build-system]

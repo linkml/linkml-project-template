@@ -1,2 +1,2 @@
 name: my-datamodel
-source_schema_path: src/linkml/my_datamodel.yaml
+source_schema_path: src/schema/my_datamodel.yaml

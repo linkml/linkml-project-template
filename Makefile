@@ -13,6 +13,7 @@ SOURCE_SCHEMA_PATH = $(shell bash ./utils/get-value.sh source_schema_path)
 SRC = src
 DEST = project
 PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
+SCHEMA_YAML = $(SRC)/$(SCHEMA_NAME)/schema/$(SCHEMA_NAME).yaml
 DOCDIR = docs
 
 # basename of a YAML file in model/
@@ -69,6 +70,11 @@ update:
 
 # Test documentation locally
 serve: mkd-serve
+
+# Deploy gh docs
+deploy-gh-doc:
+	poetry run gen-doc -d docs $(SCHEMA_YAML)
+	poetry run mkdocs gh-deploy
 
 # Python datamodel
 $(PYMODEL):

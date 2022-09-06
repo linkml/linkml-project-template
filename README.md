@@ -2,7 +2,7 @@
 
 _A template for LinkML projects_
 
-NOTE: You don't need to directly use this repository directly!
+NOTE: You don't need to use this repository directly as a GitHub template!
 
 Instead:
 

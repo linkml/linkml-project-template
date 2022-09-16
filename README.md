@@ -1,3 +1,9 @@
+__THIS REPOSITORY IS ARCHIVED__
+
+For creating new projects, you should use this:
+
+https://github.com/linkml/linkml-project-cookiecutter
+
 # LinkML Project Template
 
 _A template for LinkML projects_
